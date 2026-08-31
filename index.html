@@ -1,1426 +1,627 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AI Travel Planner</title>
-
-    <link rel="stylesheet" href="/static/css/style.css">
-
+    <title>SafarAI - AI Travel Planner Pakistan & Worldwide</title>
+    <meta name="description" content="Plan your dream trip across Pakistan & international destinations with AI. Integrated with Bookme, Sastaticket, Gerry's, TripKar & FindMyAdventure.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
-
-
 <body>
 
-
-
-<!-- ===========================
-     NAVBAR
-=========================== -->
-
-
-<nav>
-
-
-    <div class="logo">
-        ✈️ AI Travel Planner
-    </div>
-
-
-
-    <ul>
-
-    <li>
-        <a href="#home">
-            🏠 Home
-        </a>
-    </li>
-
-
-    <li>
-        <a href="#destinations">
-            🌍 Destinations
-        </a>
-    </li>
-
-
-    <li>
-        <a href="#about">
-            🤖 About
-        </a>
-    </li>
-
-
-    <li>
-        <a href="#contact">
-            📩 Contact
-        </a>
-    </li>
-
-</ul>
-
-
-
-    <div class="nav-buttons">
-
-    <button class="login-btn" onclick="openLogin()">
-        🔐 Login
-    </button>
-
-
-    <button class="signup-btn" onclick="openSignup()">
-        🚀 Sign Up
-    </button>
-
-
-</div>
-
-
-</nav>
-
-
-
-
-
-
-<!-- ===========================
-     HERO SECTION
-=========================== -->
-
-
-<section class="hero" id="home">
-
-
-    <div class="hero-overlay"></div>
-
-
-
-    <div class="hero-content">
-
-
-
-        <h1>
-            Plan Your Dream Trip with AI ✈️
-        </h1>
-
-
-
-        <p>
-            Discover amazing destinations, create personalized itineraries,
-            and travel smarter with AI-powered planning.
-        </p>
-
-
-
-
-        <div class="hero-buttons">
-
-
-            <button class="explore-btn">
-
-                Explore Now 🌍
-
-            </button>
-
-
-
-
-            <button class="ai-btn">
-
-                Ask AI 🤖
-
-            </button>
-
-
-        </div>
-
-
-
-
-
-        <div class="search-box">
-
-
-            <input 
-            type="text"
-            placeholder="Where do you want to go?">
-
-
-            <input 
-            type="date">
-
-
-
-            <input 
-            type="date">
-
-
-
-            <button>
-
-                Generate Trip 🚀
-
-            </button>
-
-
-
-        </div>
-
-
-
-    </div>
-
-
-
-
-
-    <div class="hero-image">
-
-
-        <img 
-        src="/static/images/travel-ai.jpg"
-        alt="AI Travel">
-
-
-    </div>
-
-
-
-
-</section>
-
-
-
-
-
-
-
-<!-- ===========================
-     AI PLANNER SECTION
-=========================== -->
-
-
-<section class="ai-planner">
-
-
-
-<h2>
-    Create Your Perfect Trip With AI 🤖✈️
-</h2>
-
-
-
-
-<p class="planner-text">
-
-    Tell us your travel preferences and our AI
-    will create a personalized itinerary for you.
-
-</p>
-
-
-
-
-
-<div class="planner-box">
-
-
-
-    <input 
-    type="text"
-    placeholder="Enter destination">
-
-
-
-    <input 
-    type="date">
-
-
-
-    <input 
-    type="date">
-
-
-
-
-
-    <select>
-
-
-        <option>
-            Select Budget
-        </option>
-
-
-        <option>
-            Budget Friendly
-        </option>
-
-
-        <option>
-            Medium
-        </option>
-
-
-        <option>
-            Luxury
-        </option>
-
-
-    </select>
-
-
-
-
-
-    <select>
-
-
-        <option>
-            Travel Style
-        </option>
-
-
-        <option>
-            Adventure
-        </option>
-
-
-        <option>
-            Family
-        </option>
-
-
-        <option>
-            Couple
-        </option>
-
-
-        <option>
-            Business
-        </option>
-
-
-
-    </select>
-
-
-
-
-
-    <button>
-
-        Generate AI Trip 🚀
-
-    </button>
-
-
-
-
-</div>
-<div class="ai-result">
-
-    <h2>
-        Your AI Trip Plan ✈️
-    </h2>
-
-
-    <p>
-        Your personalized itinerary will appear here...
-    </p>
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-
-<!-- ===========================
-     DESTINATIONS
-=========================== -->
-
-
-<section class="destinations" id="destinations">
-
-
-<h2>
-    Popular Destinations
-</h2>
-
-
-
-<div class="destination-cards">
-
-
-
-    <div class="card">
-
-
-        <div class="image-box">
-
-
-            <img 
-            src="/static/images/paris.jpg"
-            alt="Paris">
-
-
-            <div class="image-overlay">
-
-                <button>
-                    Explore
-                </button>
-
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-icon">✈️</span>
+                <span class="logo-text">Safar<span class="highlight">AI</span></span>
+                <span class="country-badge">🇵🇰 PK</span>
+            </a>
+
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#ai-planner" class="nav-link">AI Planner</a></li>
+                    <li><a href="#brands" class="nav-link">Top PK Brands</a></li>
+                    <li><a href="#destinations" class="nav-link">Destinations</a></li>
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                </ul>
+                <div class="nav-buttons-mobile">
+                    <button class="btn btn-outline" onclick="openLogin()">Login</button>
+                    <button class="btn btn-primary" onclick="openSignup()">Sign Up</button>
+                </div>
             </div>
 
-
-        </div>
-
-
-
-        <h3>
-            Paris
-        </h3>
-
-
-        <p>
-            City of Love and Lights
-        </p>
-
-
-
-    </div>
-
-
-
-
-
-
-
-    <div class="card">
-
-
-        <div class="image-box">
-
-
-            <img 
-            src="/static/images/dubai.jpg"
-            alt="Dubai">
-
-
-            <div class="image-overlay">
-
-                <button>
-                    Explore
+            <div class="nav-actions">
+                <button class="btn btn-outline nav-btn-desktop" onclick="openLogin()">Login</button>
+                <button class="btn btn-primary nav-btn-desktop" onclick="openSignup()">Sign Up</button>
+                
+                <!-- Mobile Hamburger Button -->
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
+            </div>
+        </div>
+    </nav>
 
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-bg-glow"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="badge-pill">
+                    <span class="badge-dot"></span>
+                    <span>#1 AI Travel Assistant in Pakistan 🇵🇰</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Discover Pakistan & The World With <span class="text-gradient">Smart AI</span> ✈️
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Generate instant day-by-day itineraries, PKR budget estimates, and book with Pakistan's top travel platforms: <strong>Bookme, Sastaticket, Gerry's, TripKar & FindMyAdventure</strong>.
+                </p>
+
+                <!-- Search Widget Box -->
+                <div class="search-widget-container">
+                    <div class="widget-tabs">
+                        <button class="tab-btn active" onclick="switchTab(this, 'ai-tab')">🤖 AI Itinerary</button>
+                        <button class="tab-btn" onclick="switchTab(this, 'flights-tab')">✈️ Flights</button>
+                        <button class="tab-btn" onclick="switchTab(this, 'hotels-tab')">🏨 Hotels</button>
+                        <button class="tab-btn" onclick="switchTab(this, 'tours-tab')">🏔️ North Tours</button>
+                    </div>
+
+                    <form class="search-form" id="searchForm" onsubmit="handleQuickSearch(event)">
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="destInput">📍 Destination</label>
+                                <input type="text" id="destInput" placeholder="e.g. Hunza Valley, Skardu, Dubai" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="dateFrom">📅 Start Date</label>
+                                <input type="date" id="dateFrom" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="durationSelect">⏳ Duration</label>
+                                <select id="durationSelect">
+                                    <option value="3">3 Days Weekend</option>
+                                    <option value="5" selected>5 Days Tour</option>
+                                    <option value="7">7 Days Expedition</option>
+                                    <option value="10">10+ Days Vacation</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="budgetSelect">💰 Budget (PKR)</label>
+                                <select id="budgetSelect">
+                                    <option value="budget">Economy (PKR 35k-75k)</option>
+                                    <option value="moderate" selected>Standard (PKR 80k-180k)</option>
+                                    <option value="luxury">Luxury (PKR 200k+)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-gradient search-btn">
+                            <span>Generate AI Trip Plan 🚀</span>
+                        </button>
+                    </form>
+                </div>
             </div>
 
-
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <img src="static/images/travel-ai.jpg" alt="AI Travel Pakistan" class="hero-img">
+                    <div class="glass-card float-card-1">
+                        <div class="icon-circle">🏔️</div>
+                        <div>
+                            <h4>Hunza Valley Tour</h4>
+                            <p>5 Days • PKR 65,000</p>
+                        </div>
+                    </div>
+                    <div class="glass-card float-card-2">
+                        <div class="icon-circle green">⭐</div>
+                        <div>
+                            <h4>Top Rated Partners</h4>
+                            <p>Integrated PK Booking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-
-
-        <h3>
-            Dubai
-        </h3>
-
-
-        <p>
-            Luxury and Modern Architecture
-        </p>
-
-
-
-    </div>
-
-
-
-
-
-
-
-
-    <div class="card">
-
-
-        <div class="image-box">
-
-
-            <img 
-            src="/static/images/japan.jpg"
-            alt="Japan">
-
-
-            <div class="image-overlay">
-
-                <button>
-                    Explore
-                </button>
-
+    <!-- TOP 5 PAKISTAN TRAVEL BRANDS INTEGRATION -->
+    <section class="brands-section" id="brands">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">PAKISTAN TRAVEL ECOSYSTEM</span>
+                <h2>Powered By Top 5 Pakistani Travel Brands 🇵🇰</h2>
+                <p>We combine AI itinerary planning with direct booking links from Pakistan's most trusted travel services.</p>
             </div>
 
-
-        </div>
-
-
-
-        <h3>
-            Japan
-        </h3>
-
-
-        <p>
-            Tradition Meets Technology
-        </p>
-
-
-
-    </div>
-
-
-
-
-
-
-
-
-    <div class="card">
-
-
-        <div class="image-box">
-
-
-            <img 
-            src="/static/images/turkey.jpg"
-            alt="Turkey">
-
-
-            <div class="image-overlay">
-
-                <button>
-                    Explore
-                </button>
-
-            </div>
-
-
-        </div>
-
-
-
-        <h3>
-            Turkey
-        </h3>
-
-
-        <p>
-            Magical Cappadocia Adventures
-        </p>
-
-
-
-    </div>
-
-
-
-
-
-</div>
-
-
-</section>
-<!-- =========================
-ABOUT SECTION
-========================= -->
-
-
-<section class="about" id="about">
-
-
-    <div class="about-container">
-
-
-
-        <div class="about-image">
-
-
-            <img 
-            src="/static/images/about-ai.jpg"
-            alt="AI Travel">
-
-
-        </div>
-
-
-
-
-
-        <div class="about-content">
-
-
-            <h2>
-                About AI Travel Planner 🤖✈️
-            </h2>
-
-
-
-            <p>
-
-                AI Travel Planner is your intelligent travel companion
-                that helps you create personalized journeys using
-                Artificial Intelligence.
-
-                Plan destinations, discover hidden places,
-                manage your budget and explore the world smarter.
-
-            </p>
-
-
-
-
-            <div class="about-cards">
-
-
-
-                <div class="about-card">
-
-                    <h3>
-                        🤖 AI Technology
-                    </h3>
-
-                    <p>
-                        Smart recommendations powered by Artificial Intelligence.
-                    </p>
-
+            <div class="brands-grid">
+                <!-- Brand 1: Bookme.pk -->
+                <div class="brand-card">
+                    <div class="brand-badge green">Super App</div>
+                    <div class="brand-icon">🚌</div>
+                    <h3>Bookme.pk</h3>
+                    <p class="brand-type">E-Ticketing & Transportation</p>
+                    <p class="brand-desc">Book intercity bus tickets, domestic flights, hotels, and event passes instantly across Pakistan.</p>
+                    <ul class="brand-features">
+                        <li>✓ Daewoo, Faisal Movers & Bus Ticketing</li>
+                        <li>✓ PIA, AirSial & FlyJinnah Flights</li>
+                        <li>✓ Instant PKR Mobile Payments</li>
+                    </ul>
+                    <a href="https://bookme.pk" target="_blank" rel="noopener" class="brand-link">Explore Bookme →</a>
                 </div>
 
-
-
-
-
-                <div class="about-card">
-
-                    <h3>
-                        🌍 Global Destinations
-                    </h3>
-
-                    <p>
-                        Explore amazing places around the world.
-                    </p>
-
+                <!-- Brand 2: Sastaticket.pk -->
+                <div class="brand-card">
+                    <div class="brand-badge cyan">Flights Leader</div>
+                    <div class="brand-icon">✈️</div>
+                    <h3>Sastaticket.pk</h3>
+                    <p class="brand-type">Online Travel Agency (OTA)</p>
+                    <p class="brand-desc">Compare low-cost flight tickets and top hotel rates for domestic and international travel.</p>
+                    <ul class="brand-features">
+                        <li>✓ Cheap Flights Guarantee</li>
+                        <li>✓ Domestic & Umrah Packages</li>
+                        <li>✓ JazzCash & EasyPaisa Support</li>
+                    </ul>
+                    <a href="https://www.sastaticket.pk" target="_blank" rel="noopener" class="brand-link">Explore Sastaticket →</a>
                 </div>
 
-
-
-
-
-
-                <div class="about-card">
-
-                    <h3>
-                        ⚡ Fast Planning
-                    </h3>
-
-                    <p>
-                        Generate complete travel plans in seconds.
-                    </p>
-
+                <!-- Brand 3: Gerry's Travel -->
+                <div class="brand-card">
+                    <div class="brand-badge gold">Visa & Corporate</div>
+                    <div class="brand-icon">🛂</div>
+                    <h3>Gerry's Travel</h3>
+                    <p class="brand-type">Visa Facilitation & Tourism</p>
+                    <p class="brand-desc">Pakistan's premier travel house with 60+ years experience in visa processing, group tours & flights.</p>
+                    <ul class="brand-features">
+                        <li>✓ Official Visa Application Centers</li>
+                        <li>✓ Worldwide Custom Packages</li>
+                        <li>✓ Corporate Travel Management</li>
+                    </ul>
+                    <a href="https://gerrystravel.com" target="_blank" rel="noopener" class="brand-link">Explore Gerry's →</a>
                 </div>
 
+                <!-- Brand 4: TripKar -->
+                <div class="brand-card">
+                    <div class="brand-badge purple">Local Tourism</div>
+                    <div class="brand-icon">🏔️</div>
+                    <h3>TripKar</h3>
+                    <p class="brand-type">Domestic Tour Operator</p>
+                    <p class="brand-desc">Specialized in Northern Pakistan expeditions—Hunza, Skardu, Fairy Meadows, Naran, and Malam Jabba.</p>
+                    <ul class="brand-features">
+                        <li>✓ Verified Northern Hotels & Resorts</li>
+                        <li>✓ Local Jeep & Trekking Guides</li>
+                        <li>✓ Custom Family Tour Packages</li>
+                    </ul>
+                    <a href="https://tripkar.com" target="_blank" rel="noopener" class="brand-link">Explore TripKar →</a>
+                </div>
 
+                <!-- Brand 5: FindMyAdventure / TravelStudio -->
+                <div class="brand-card">
+                    <div class="brand-badge emerald">Adventure</div>
+                    <div class="brand-icon">🏕️</div>
+                    <h3>FindMyAdventure</h3>
+                    <p class="brand-type">Expeditions & Community Tours</p>
+                    <p class="brand-desc">Premier platform for curated adventure trips, camping in Gilgit-Baltistan, and group activities.</p>
+                    <ul class="brand-features">
+                        <li>✓ K2 Basecamp & Deosai Treks</li>
+                        <li>✓ Camping & River Rafting</li>
+                        <li>✓ Certified Local Team Leaders</li>
+                    </ul>
+                    <a href="https://findmyadventure.pk" target="_blank" rel="noopener" class="brand-link">Explore Adventure →</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- AI PLANNER INTERACTIVE TOOL -->
+    <section class="ai-planner-section" id="ai-planner">
+        <div class="section-container">
+            <div class="planner-box-wrapper">
+                <div class="planner-header">
+                    <span class="badge-pill">INTERACTIVE AI ENGINE</span>
+                    <h2>Generate Your Custom Travel Plan</h2>
+                    <p>Select your preferences below to craft a complete itinerary with PKR cost estimates.</p>
+                </div>
 
+                <div class="planner-form-grid">
+                    <div class="form-group">
+                        <label for="aiDest">Select Destination</label>
+                        <select id="aiDest">
+                            <option value="Hunza & Nagar Valley">🏔️ Hunza & Nagar Valley (Gilgit-Baltistan)</option>
+                            <option value="Skardu & Deosai Plains">🌌 Skardu & Deosai Plains</option>
+                            <option value="Swat Valley & Malam Jabba">🌲 Swat Valley & Malam Jabba Ski Resort</option>
+                            <option value="Lahore Cultural Heritage">🕌 Lahore Cultural & Food Tour</option>
+                            <option value="Islamabad & Margalla Hills">🏛️ Islamabad & Margalla Hills</option>
+                            <option value="Dubai Luxury Experience">🏙️ Dubai & Desert Safari (UAE)</option>
+                            <option value="Istanbul & Cappadocia">🕌 Istanbul & Cappadocia (Turkey)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aiDays">Trip Duration</label>
+                        <select id="aiDays">
+                            <option value="3">3 Days (Short Escape)</option>
+                            <option value="5" selected>5 Days (Standard Trip)</option>
+                            <option value="7">7 Days (Full Exploration)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aiStyle">Travel Style</label>
+                        <select id="aiStyle">
+                            <option value="Adventure & Trekking">🧗 Adventure & Trekking</option>
+                            <option value="Family Friendly">👨‍👩‍👧‍👦 Family Friendly & Relaxed</option>
+                            <option value="Cultural & Foodie">🥘 Heritage & Culinary Tour</option>
+                            <option value="Honeymoon / Couple">💑 Honeymoon & Luxury</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aiTier">Budget Preference</label>
+                        <select id="aiTier">
+                            <option value="Budget Backpacker">🪙 Economy (Public Transport / Guest Houses)</option>
+                            <option value="Standard Comfort" selected>🏨 Standard (3-Star Hotels / Dedicated Coaster)</option>
+                            <option value="VIP Premium">👑 VIP Luxury (4/5-Star Resorts / Private Prado)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="planner-actions">
+                    <button class="btn btn-gradient btn-large" onclick="generateAIItinerary()">
+                        ⚡ Generate AI Itinerary & Quotes
+                    </button>
+                </div>
+
+                <!-- AI Output Results Container -->
+                <div class="ai-result-display" id="aiResultDisplay">
+                    <div class="result-placeholder">
+                        <div class="placeholder-icon">🤖</div>
+                        <h3>Your Custom AI Itinerary Will Appear Here</h3>
+                        <p>Select your destination above and click 'Generate AI Itinerary' to see a detailed day-by-day plan with cost breakdowns and booking recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POPULAR DESTINATIONS -->
+    <section class="destinations-section" id="destinations">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">EXPLORE TOP SPOTS</span>
+                <h2>Popular Destinations 🌍</h2>
+                <p>Top trending destinations for Pakistani travelers this season.</p>
             </div>
 
+            <div class="destinations-grid">
+                <!-- Hunza Card -->
+                <div class="dest-card">
+                    <div class="dest-image-wrapper">
+                        <img src="static/images/travel-ai.jpg" alt="Hunza Valley" class="dest-img">
+                        <span class="dest-badge">Gilgit-Baltistan</span>
+                    </div>
+                    <div class="dest-content">
+                        <h3>Hunza & Nagar Valley</h3>
+                        <p>Attabad Lake, Baltit Fort, Passu Cones & Eagle's Nest vantage points.</p>
+                        <div class="dest-meta">
+                            <span class="dest-price">From PKR 55,000</span>
+                            <span class="dest-rating">⭐ 4.9 (1.2k reviews)</span>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Skardu Card -->
+                <div class="dest-card">
+                    <div class="dest-image-wrapper">
+                        <img src="static/images/about-ai.jpg" alt="Skardu" class="dest-img">
+                        <span class="dest-badge">Gilgit-Baltistan</span>
+                    </div>
+                    <div class="dest-content">
+                        <h3>Skardu & Shangrila</h3>
+                        <p>Shangrila Lake, Cold Desert, Katpana Dunes & Deosai National Park.</p>
+                        <div class="dest-meta">
+                            <span class="dest-price">From PKR 68,000</span>
+                            <span class="dest-rating">⭐ 4.9 (890 reviews)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paris Card -->
+                <div class="dest-card">
+                    <div class="dest-image-wrapper">
+                        <img src="static/images/paris.jpg" alt="Paris" class="dest-img">
+                        <span class="dest-badge">Europe</span>
+                    </div>
+                    <div class="dest-content">
+                        <h3>Paris, France</h3>
+                        <p>Eiffel Tower, Louvre Museum, Seine River Cruises & French Cuisine.</p>
+                        <div class="dest-meta">
+                            <span class="dest-price">From PKR 320,000</span>
+                            <span class="dest-rating">⭐ 4.8 (2.4k reviews)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dubai Card -->
+                <div class="dest-card">
+                    <div class="dest-image-wrapper">
+                        <img src="static/images/dubai.jpg" alt="Dubai" class="dest-img">
+                        <span class="dest-badge">Middle East</span>
+                    </div>
+                    <div class="dest-content">
+                        <h3>Dubai, UAE</h3>
+                        <p>Burj Khalifa, Desert Safari, Museum of the Future & Luxury Malls.</p>
+                        <div class="dest-meta">
+                            <span class="dest-price">From PKR 185,000</span>
+                            <span class="dest-rating">⭐ 4.9 (3.1k reviews)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Japan Card -->
+                <div class="dest-card">
+                    <div class="dest-image-wrapper">
+                        <img src="static/images/japan.jpg" alt="Japan" class="dest-img">
+                        <span class="dest-badge">East Asia</span>
+                    </div>
+                    <div class="dest-content">
+                        <h3>Tokyo & Kyoto, Japan</h3>
+                        <p>Cherry Blossoms, Mount Fuji, Bullet Trains & Historic Shrines.</p>
+                        <div class="dest-meta">
+                            <span class="dest-price">From PKR 420,000</span>
+                            <span class="dest-rating">⭐ 4.9 (1.5k reviews)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Turkey Card -->
+                <div class="dest-card">
+                    <div class="dest-image-wrapper">
+                        <img src="static/images/turkey.jpg" alt="Turkey" class="dest-img">
+                        <span class="dest-badge">Eurasia</span>
+                    </div>
+                    <div class="dest-content">
+                        <h3>Istanbul & Cappadocia</h3>
+                        <p>Hagia Sophia, Hot Air Balloons, Bosphorus Cruise & Grand Bazaar.</p>
+                        <div class="dest-meta">
+                            <span class="dest-price">From PKR 210,000</span>
+                            <span class="dest-rating">⭐ 4.9 (2.8k reviews)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
+    <!-- FEATURES SECTION -->
+    <section class="features-section" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">WHY SAFAR AI</span>
+                <h2>Built For Pakistani Travelers 🚀</h2>
+                <p>Advanced AI technology paired with local Pakistani booking options.</p>
+            </div>
 
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-num">01</div>
+                    <div class="feature-icon-box">🤖</div>
+                    <h3>AI Smart Itineraries</h3>
+                    <p>Tailor-made schedules generated instantly based on your budget, travel dates, and interests.</p>
+                </div>
 
-    </div>
+                <div class="feature-card">
+                    <div class="feature-num">02</div>
+                    <div class="feature-icon-box">🇵🇰</div>
+                    <h3>PKR Budget Calculators</h3>
+                    <p>Real-time pricing in PKR for transport, local food, hotel stays, and entry permits.</p>
+                </div>
 
+                <div class="feature-card">
+                    <div class="feature-num">03</div>
+                    <div class="feature-icon-box">🔗</div>
+                    <h3>Integrated PK Partners</h3>
+                    <p>Direct integration with Bookme, Sastaticket, Gerry's, TripKar & FindMyAdventure.</p>
+                </div>
 
-
-</section>
-
-<!-- ===========================
-     FEATURES SECTION
-=========================== -->
-
-
-<section class="features" id="features">
-
-
-<h2>
-    Why Choose AI Travel Planner? 🚀
-</h2>
-
-
-
-<div class="feature-container">
-
-
-
-    <div class="feature-card">
-
-
-        <div class="feature-number">
-            01
+                <div class="feature-card">
+                    <div class="feature-num">04</div>
+                    <div class="feature-icon-box">🌦️</div>
+                    <h3>Live Weather & Terrain</h3>
+                    <p>Smart alerts on Karakoram Highway road status, snowfall updates, and weather forecasts.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">COMMUNITY REVIEWS</span>
+                <h2>What Travelers Say ⭐</h2>
+                <p>Over 100,000+ itineraries generated for trips across Pakistan and abroad.</p>
+            </div>
 
-        <div class="feature-icon">
-            🤖
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="user-info">
+                        <img src="static/images/user1.jpg" alt="Sarah J." class="user-avatar">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>Travel Vlogger • Islamabad</p>
+                        </div>
+                    </div>
+                    <div class="stars-row">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"SafarAI organized my entire 7-day road trip to Skardu with exact PKR budgets. Booking buses via Bookme directly from the itinerary was seamless!"</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="user-info">
+                        <img src="static/images/user2.jpg" alt="Ali K." class="user-avatar">
+                        <div>
+                            <h4>Ali Khan</h4>
+                            <p>Tech Entrepreneur • Lahore</p>
+                        </div>
+                    </div>
+                    <div class="stars-row">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"The best AI travel tool for Pakistanis. Showed cheap flight options on Sastaticket and gave an accurate daily breakdown for Dubai."</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="user-info">
+                        <img src="static/images/user3.jpg" alt="Zainab M." class="user-avatar">
+                        <div>
+                            <h4>Zainab Malik</h4>
+                            <p>Adventure Traveler • Karachi</p>
+                        </div>
+                    </div>
+                    <div class="stars-row">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"We booked our Hunza Valley hotel and guide through the TripKar integration. The AI suggested spots we wouldn't have discovered otherwise!"</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-
-        <h3>
-            AI Powered Planning
-        </h3>
-
-
-        <p>
-            Create personalized travel itineraries
-            instantly using advanced Artificial Intelligence.
-        </p>
-
-
-    </div>
-
-
-
-
-
-    <div class="feature-card">
-
-
-        <div class="feature-number">
-            02
+    <!-- STATS BANNER -->
+    <section class="stats-banner">
+        <div class="section-container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">100,000+</div>
+                    <p class="stat-label">Travelers Assisted</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">5 Top Brands</div>
+                    <p class="stat-label">Pakistani Booking Partners</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">PKR 50M+</div>
+                    <p class="stat-label">Travel Savings Estimated</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">4.9 / 5.0</div>
+                    <p class="stat-label">User Rating Average</p>
+                </div>
+            </div>
         </div>
+    </section>
 
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="section-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <span class="logo-icon">✈️</span>
+                        <span class="logo-text">Safar<span class="highlight">AI</span></span>
+                        <span class="country-badge">🇵🇰 PK</span>
+                    </a>
+                    <p>Pakistan's premiere AI travel platform. Plan trips across Pakistan & worldwide with integrated booking from Bookme, Sastaticket, Gerry's, TripKar & FindMyAdventure.</p>
+                </div>
 
-        <div class="feature-icon">
-            💰
+                <div class="footer-col">
+                    <h4>Top PK Brands</h4>
+                    <ul>
+                        <li><a href="https://bookme.pk" target="_blank" rel="noopener">Bookme.pk</a></li>
+                        <li><a href="https://www.sastaticket.pk" target="_blank" rel="noopener">Sastaticket.pk</a></li>
+                        <li><a href="https://gerrystravel.com" target="_blank" rel="noopener">Gerry's Travel</a></li>
+                        <li><a href="https://tripkar.com" target="_blank" rel="noopener">TripKar</a></li>
+                        <li><a href="https://findmyadventure.pk" target="_blank" rel="noopener">FindMyAdventure</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Top Destinations</h4>
+                    <ul>
+                        <li><a href="#destinations">Hunza & Nagar</a></li>
+                        <li><a href="#destinations">Skardu & Deosai</a></li>
+                        <li><a href="#destinations">Swat & Kalam</a></li>
+                        <li><a href="#destinations">Dubai & Istanbul</a></li>
+                        <li><a href="#destinations">Paris & Europe</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Get weekly travel updates and northern Pakistan weather alerts.</p>
+                    <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 SafarAI Pakistan. All Rights Reserved. Built with AI for Pakistani Travelers.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook">🌐</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="YouTube">▶️</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
         </div>
+    </footer>
 
-
-        <h3>
-            Smart Budget Control
-        </h3>
-
-
-        <p>
-            Get travel recommendations according
-            to your budget and preferences.
-        </p>
-
-
-    </div>
-
-
-
-
-
-
-
-    <div class="feature-card">
-
-
-        <div class="feature-number">
-            03
+    <!-- MODAL: LOGIN -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content glass-card">
+            <span class="close-btn" onclick="closeLogin()">&times;</span>
+            <h2>Welcome Back to Safar<span class="highlight">AI</span> ✈️</h2>
+            <p>Login to save your itineraries and manage bookings.</p>
+            <form onsubmit="handleAuth(event, 'Login Successful!')">
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="name@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-gradient btn-full">Login to Account</button>
+            </form>
         </div>
+    </div>
 
-
-        <div class="feature-icon">
-            🌦️
+    <!-- MODAL: SIGNUP -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content glass-card">
+            <span class="close-btn" onclick="closeSignup()">&times;</span>
+            <h2>Create Your Account 🚀</h2>
+            <p>Join 100,000+ Pakistani travelers using AI.</p>
+            <form onsubmit="handleAuth(event, 'Account Created Successfully!')">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Ali Khan" required>
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="name@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-gradient btn-full">Create SafarAI Account</button>
+            </form>
         </div>
-
-
-        <h3>
-            Weather Intelligence
-        </h3>
-
-
-        <p>
-            Check weather conditions before
-            planning your perfect journey.
-        </p>
-
-
     </div>
 
-
-
-
-
-
-
-    <div class="feature-card">
-
-
-        <div class="feature-number">
-            04
-        </div>
-
-
-        <div class="feature-icon">
-            🗺️
-        </div>
-
-
-        <h3>
-            Smart Route Planning
-        </h3>
-
-
-        <p>
-            Find optimized routes and save
-            your valuable travel time.
-        </p>
-
-
-    </div>
-
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- ===========================
-     TESTIMONIALS
-=========================== -->
-
-
-<section class="testimonials" id="testimonials">
-
-
-<h2>
-    What Our Travelers Say ⭐
-</h2>
-
-
-
-
-<div class="testimonial-container">
-
-
-
-
-
-    <div class="testimonial-card">
-
-
-        <img 
-        src="/static/images/user1.jpg"
-        alt="Sarah">
-
-
-        <p>
-
-        "This AI planner created the perfect itinerary
-        for my Europe trip. It saved me hours of planning!"
-
-        </p>
-
-
-
-        <div class="stars">
-
-            ⭐⭐⭐⭐⭐
-
-        </div>
-
-
-
-        <h4>
-            Sarah Johnson
-        </h4>
-
-
-
-        <span>
-            Travel Blogger
-        </span>
-
-
-    </div>
-
-
-
-
-
-
-
-
-    <div class="testimonial-card">
-
-
-        <img 
-        src="/static/images/user2.jpg"
-        alt="Ali">
-
-
-        <p>
-
-        "Amazing recommendations and budget planning.
-        Everything was organized perfectly."
-
-        </p>
-
-
-
-        <div class="stars">
-
-            ⭐⭐⭐⭐⭐
-
-        </div>
-
-
-
-        <h4>
-            Ali Khan
-        </h4>
-
-
-
-        <span>
-            Business Traveler
-        </span>
-
-
-    </div>
-
-
-
-
-
-
-
-
-
-    <div class="testimonial-card">
-
-
-        <img 
-        src="/static/images/user3.jpg"
-        alt="Emma">
-
-
-        <p>
-
-        "The smartest travel assistant I've ever used.
-        Highly recommended!"
-
-        </p>
-
-
-
-        <div class="stars">
-
-            ⭐⭐⭐⭐⭐
-
-        </div>
-
-
-
-        <h4>
-            Emma Wilson
-        </h4>
-
-
-
-        <span>
-            Adventure Traveler
-        </span>
-
-
-    </div>
-
-
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<!-- ===========================
-     STATISTICS
-=========================== -->
-
-
-<section class="statistics">
-
-
-<div class="stats-container">
-
-
-
-    <div class="stat-card">
-
-
-        <div class="stat-icon">
-            👥
-        </div>
-
-
-        <h2>
-            100K+
-        </h2>
-
-
-        <p>
-            Happy Travelers
-        </p>
-
-
-    </div>
-
-
-
-
-
-
-
-    <div class="stat-card">
-
-
-        <div class="stat-icon">
-            🌍
-        </div>
-
-
-        <h2>
-            50+
-        </h2>
-
-
-        <p>
-            Countries Covered
-        </p>
-
-
-    </div>
-
-
-
-
-
-
-
-
-    <div class="stat-card">
-
-
-        <div class="stat-icon">
-            🤖
-        </div>
-
-
-        <h2>
-            10K+
-        </h2>
-
-
-        <p>
-            AI Trip Plans
-        </p>
-
-
-    </div>
-
-
-
-
-
-
-
-
-    <div class="stat-card">
-
-
-        <div class="stat-icon">
-            ⚡
-        </div>
-
-
-        <h2>
-            24/7
-        </h2>
-
-
-        <p>
-            AI Travel Support
-        </p>
-
-
-    </div>
-
-
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-<!-- ===========================
-     FOOTER
-=========================== -->
-
-
-<footer class="footer" id="contact">
-
-
-
-<div class="newsletter">
-
-
-    <h2>
-        Ready To Plan Your Next Adventure? ✈️
-    </h2>
-
-
-    <p>
-        Subscribe and get smart travel ideas powered by AI.
-    </p>
-
-
-
-    <div class="newsletter-box">
-
-
-        <input 
-        type="email"
-        placeholder="Enter your email">
-
-
-
-        <button>
-            Subscribe 🚀
-        </button>
-
-
-
-    </div>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="footer-container">
-
-
-
-    <div class="footer-box">
-
-
-        <h2>
-            AI Travel Planner ✈️
-        </h2>
-
-
-        <p>
-
-            Your intelligent travel companion
-            that creates personalized journeys
-            using Artificial Intelligence.
-
-        </p>
-
-
-    </div>
-
-
-
-
-
-
-
-
-    <div class="footer-box">
-
-
-        <h3>
-            Quick Links
-        </h3>
-
-
-        <a href="#home">
-            🏠 Home
-        </a>
-
-
-        <a href="#destinations">
-            🌍 Destinations
-        </a>
-
-
-        <a href="#features">
-            🚀 Features
-        </a>
-
-
-        <a href="#testimonials">
-            ⭐ Reviews
-        </a>
-
-
-    </div>
-
-
-
-
-
-
-
-
-
-    <div class="footer-box">
-
-
-        <h3>
-            Explore
-        </h3>
-
-
-        <a href="#">
-            Adventure Trips
-        </a>
-
-
-        <a href="#">
-            Luxury Travel
-        </a>
-
-
-        <a href="#">
-            Budget Travel
-        </a>
-
-
-        <a href="#">
-            Family Trips
-        </a>
-
-
-    </div>
-
-
-
-
-
-
-
-
-
-    <div class="footer-box">
-
-
-        <h3>
-            Follow Us
-        </h3>
-
-
-        <div class="social-links">
-
-
-            <a href="#">
-                🌐
-            </a>
-
-
-            <a href="#">
-                📸
-            </a>
-
-
-            <a href="#">
-                ▶️
-            </a>
-
-
-            <a href="#">
-                💼
-            </a>
-
-
-        </div>
-
-
-
-        <p>
-            📧 support@aitravel.com
-        </p>
-
-
-        <p>
-            🌎 Worldwide
-        </p>
-
-
-    </div>
-
-
-
-
-</div>
-
-
-
-
-
-
-<div class="footer-bottom">
-
-
-<p>
-© 2026 AI Travel Planner. All Rights Reserved.
-</p>
-
-
-</div>
-
-
-
-
-</footer>
-<!-- LOGIN POPUP -->
-
-<div class="modal" id="loginModal">
-
-
-    <div class="modal-box">
-
-
-        <span class="close" onclick="closeLogin()">
-            ×
-        </span>
-
-
-        <h2>
-            Welcome Back ✈️
-        </h2>
-
-
-        <input 
-        type="email"
-        placeholder="Enter Email">
-
-
-        <input 
-        type="password"
-        placeholder="Enter Password">
-
-
-        <button>
-            Login
-        </button>
-
-
-    </div>
-
-
-</div>
-
-
-
-
-
-
-<!-- SIGNUP POPUP -->
-
-<div class="modal" id="signupModal">
-
-
-    <div class="modal-box">
-
-
-        <span class="close" onclick="closeSignup()">
-            ×
-        </span>
-
-
-
-        <h2>
-            Create Account 🚀
-        </h2>
-
-
-
-        <input
-        type="text"
-        placeholder="Full Name">
-
-
-
-        <input
-        type="email"
-        placeholder="Email">
-
-
-
-        <input
-        type="password"
-        placeholder="Password">
-
-
-
-        <button>
-            Sign Up
-        </button>
-
-
-
-    </div>
-
-
-</div>
-
-
-
-
-
-<script src="/static/js/script.js"></script>
-
-
-
-
-
+    <!-- JavaScript -->
+    <script src="static/js/script.js"></script>
 </body>
-
 </html>
