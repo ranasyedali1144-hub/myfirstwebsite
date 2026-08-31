@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Travel Planner</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+
+<body>
+
+
+
+<!-- ===========================
+     NAVBAR
+=========================== -->
+
+
+<nav>
+
+
+    <div class="logo">
+        ✈️ AI Travel Planner
+    </div>
+
+
+
+    <ul>
+
+    <li>
+        <a href="#home">
+            🏠 Home
+        </a>
+    </li>
+
+
+    <li>
+        <a href="#destinations">
+            🌍 Destinations
+        </a>
+    </li>
+
+
+    <li>
+        <a href="#about">
+            🤖 About
+        </a>
+    </li>
+
+
+    <li>
+        <a href="#contact">
+            📩 Contact
+        </a>
+    </li>
+
+</ul>
+
+
+
+    <div class="nav-buttons">
+
+    <button class="login-btn" onclick="openLogin()">
+        🔐 Login
+    </button>
+
+
+    <button class="signup-btn" onclick="openSignup()">
+        🚀 Sign Up
+    </button>
+
+
+</div>
+
+
+</nav>
+
+
+
+
+
+
+<!-- ===========================
+     HERO SECTION
+=========================== -->
+
+
+<section class="hero" id="home">
+
+
+    <div class="hero-overlay"></div>
+
+
+
+    <div class="hero-content">
+
+
+
+        <h1>
+            Plan Your Dream Trip with AI ✈️
+        </h1>
+
+
+
+        <p>
+            Discover amazing destinations, create personalized itineraries,
+            and travel smarter with AI-powered planning.
+        </p>
+
+
+
+
+        <div class="hero-buttons">
+
+
+            <button class="explore-btn">
+
+                Explore Now 🌍
+
+            </button>
+
+
+
+
+            <button class="ai-btn">
+
+                Ask AI 🤖
+
+            </button>
+
+
+        </div>
+
+
+
+
+
+        <div class="search-box">
+
+
+            <input 
+            type="text"
+            placeholder="Where do you want to go?">
+
+
+            <input 
+            type="date">
+
+
+
+            <input 
+            type="date">
+
+
+
+            <button>
+
+                Generate Trip 🚀
+
+            </button>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="hero-image">
+
+
+        <img 
+        src="/static/images/travel-ai.jpg"
+        alt="AI Travel">
+
+
+    </div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ===========================
+     AI PLANNER SECTION
+=========================== -->
+
+
+<section class="ai-planner">
+
+
+
+<h2>
+    Create Your Perfect Trip With AI 🤖✈️
+</h2>
+
+
+
+
+<p class="planner-text">
+
+    Tell us your travel preferences and our AI
+    will create a personalized itinerary for you.
+
+</p>
+
+
+
+
+
+<div class="planner-box">
+
+
+
+    <input 
+    type="text"
+    placeholder="Enter destination">
+
+
+
+    <input 
+    type="date">
+
+
+
+    <input 
+    type="date">
+
+
+
+
+
+    <select>
+
+
+        <option>
+            Select Budget
+        </option>
+
+
+        <option>
+            Budget Friendly
+        </option>
+
+
+        <option>
+            Medium
+        </option>
+
+
+        <option>
+            Luxury
+        </option>
+
+
+    </select>
+
+
+
+
+
+    <select>
+
+
+        <option>
+            Travel Style
+        </option>
+
+
+        <option>
+            Adventure
+        </option>
+
+
+        <option>
+            Family
+        </option>
+
+
+        <option>
+            Couple
+        </option>
+
+
+        <option>
+            Business
+        </option>
+
+
+
+    </select>
+
+
+
+
+
+    <button>
+
+        Generate AI Trip 🚀
+
+    </button>
+
+
+
+
+</div>
+<div class="ai-result">
+
+    <h2>
+        Your AI Trip Plan ✈️
+    </h2>
+
+
+    <p>
+        Your personalized itinerary will appear here...
+    </p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ===========================
+     DESTINATIONS
+=========================== -->
+
+
+<section class="destinations" id="destinations">
+
+
+<h2>
+    Popular Destinations
+</h2>
+
+
+
+<div class="destination-cards">
+
+
+
+    <div class="card">
+
+
+        <div class="image-box">
+
+
+            <img 
+            src="/static/images/paris.jpg"
+            alt="Paris">
+
+
+            <div class="image-overlay">
+
+                <button>
+                    Explore
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+
+        <h3>
+            Paris
+        </h3>
+
+
+        <p>
+            City of Love and Lights
+        </p>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <div class="card">
+
+
+        <div class="image-box">
+
+
+            <img 
+            src="/static/images/dubai.jpg"
+            alt="Dubai">
+
+
+            <div class="image-overlay">
+
+                <button>
+                    Explore
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+
+        <h3>
+            Dubai
+        </h3>
+
+
+        <p>
+            Luxury and Modern Architecture
+        </p>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="card">
+
+
+        <div class="image-box">
+
+
+            <img 
+            src="/static/images/japan.jpg"
+            alt="Japan">
+
+
+            <div class="image-overlay">
+
+                <button>
+                    Explore
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+
+        <h3>
+            Japan
+        </h3>
+
+
+        <p>
+            Tradition Meets Technology
+        </p>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="card">
+
+
+        <div class="image-box">
+
+
+            <img 
+            src="/static/images/turkey.jpg"
+            alt="Turkey">
+
+
+            <div class="image-overlay">
+
+                <button>
+                    Explore
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+
+        <h3>
+            Turkey
+        </h3>
+
+
+        <p>
+            Magical Cappadocia Adventures
+        </p>
+
+
+
+    </div>
+
+
+
+
+
+</div>
+
+
+</section>
+<!-- =========================
+ABOUT SECTION
+========================= -->
+
+
+<section class="about" id="about">
+
+
+    <div class="about-container">
+
+
+
+        <div class="about-image">
+
+
+            <img 
+            src="/static/images/about-ai.jpg"
+            alt="AI Travel">
+
+
+        </div>
+
+
+
+
+
+        <div class="about-content">
+
+
+            <h2>
+                About AI Travel Planner 🤖✈️
+            </h2>
+
+
+
+            <p>
+
+                AI Travel Planner is your intelligent travel companion
+                that helps you create personalized journeys using
+                Artificial Intelligence.
+
+                Plan destinations, discover hidden places,
+                manage your budget and explore the world smarter.
+
+            </p>
+
+
+
+
+            <div class="about-cards">
+
+
+
+                <div class="about-card">
+
+                    <h3>
+                        🤖 AI Technology
+                    </h3>
+
+                    <p>
+                        Smart recommendations powered by Artificial Intelligence.
+                    </p>
+
+                </div>
+
+
+
+
+
+                <div class="about-card">
+
+                    <h3>
+                        🌍 Global Destinations
+                    </h3>
+
+                    <p>
+                        Explore amazing places around the world.
+                    </p>
+
+                </div>
+
+
+
+
+
+
+                <div class="about-card">
+
+                    <h3>
+                        ⚡ Fast Planning
+                    </h3>
+
+                    <p>
+                        Generate complete travel plans in seconds.
+                    </p>
+
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+</section>
+
+<!-- ===========================
+     FEATURES SECTION
+=========================== -->
+
+
+<section class="features" id="features">
+
+
+<h2>
+    Why Choose AI Travel Planner? 🚀
+</h2>
+
+
+
+<div class="feature-container">
+
+
+
+    <div class="feature-card">
+
+
+        <div class="feature-number">
+            01
+        </div>
+
+
+        <div class="feature-icon">
+            🤖
+        </div>
+
+
+        <h3>
+            AI Powered Planning
+        </h3>
+
+
+        <p>
+            Create personalized travel itineraries
+            instantly using advanced Artificial Intelligence.
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <div class="feature-card">
+
+
+        <div class="feature-number">
+            02
+        </div>
+
+
+        <div class="feature-icon">
+            💰
+        </div>
+
+
+        <h3>
+            Smart Budget Control
+        </h3>
+
+
+        <p>
+            Get travel recommendations according
+            to your budget and preferences.
+        </p>
+
+
+    </div>
+
+
+
+
+
+
+
+    <div class="feature-card">
+
+
+        <div class="feature-number">
+            03
+        </div>
+
+
+        <div class="feature-icon">
+            🌦️
+        </div>
+
+
+        <h3>
+            Weather Intelligence
+        </h3>
+
+
+        <p>
+            Check weather conditions before
+            planning your perfect journey.
+        </p>
+
+
+    </div>
+
+
+
+
+
+
+
+    <div class="feature-card">
+
+
+        <div class="feature-number">
+            04
+        </div>
+
+
+        <div class="feature-icon">
+            🗺️
+        </div>
+
+
+        <h3>
+            Smart Route Planning
+        </h3>
+
+
+        <p>
+            Find optimized routes and save
+            your valuable travel time.
+        </p>
+
+
+    </div>
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ===========================
+     TESTIMONIALS
+=========================== -->
+
+
+<section class="testimonials" id="testimonials">
+
+
+<h2>
+    What Our Travelers Say ⭐
+</h2>
+
+
+
+
+<div class="testimonial-container">
+
+
+
+
+
+    <div class="testimonial-card">
+
+
+        <img 
+        src="/static/images/user1.jpg"
+        alt="Sarah">
+
+
+        <p>
+
+        "This AI planner created the perfect itinerary
+        for my Europe trip. It saved me hours of planning!"
+
+        </p>
+
+
+
+        <div class="stars">
+
+            ⭐⭐⭐⭐⭐
+
+        </div>
+
+
+
+        <h4>
+            Sarah Johnson
+        </h4>
+
+
+
+        <span>
+            Travel Blogger
+        </span>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="testimonial-card">
+
+
+        <img 
+        src="/static/images/user2.jpg"
+        alt="Ali">
+
+
+        <p>
+
+        "Amazing recommendations and budget planning.
+        Everything was organized perfectly."
+
+        </p>
+
+
+
+        <div class="stars">
+
+            ⭐⭐⭐⭐⭐
+
+        </div>
+
+
+
+        <h4>
+            Ali Khan
+        </h4>
+
+
+
+        <span>
+            Business Traveler
+        </span>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="testimonial-card">
+
+
+        <img 
+        src="/static/images/user3.jpg"
+        alt="Emma">
+
+
+        <p>
+
+        "The smartest travel assistant I've ever used.
+        Highly recommended!"
+
+        </p>
+
+
+
+        <div class="stars">
+
+            ⭐⭐⭐⭐⭐
+
+        </div>
+
+
+
+        <h4>
+            Emma Wilson
+        </h4>
+
+
+
+        <span>
+            Adventure Traveler
+        </span>
+
+
+    </div>
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- ===========================
+     STATISTICS
+=========================== -->
+
+
+<section class="statistics">
+
+
+<div class="stats-container">
+
+
+
+    <div class="stat-card">
+
+
+        <div class="stat-icon">
+            👥
+        </div>
+
+
+        <h2>
+            100K+
+        </h2>
+
+
+        <p>
+            Happy Travelers
+        </p>
+
+
+    </div>
+
+
+
+
+
+
+
+    <div class="stat-card">
+
+
+        <div class="stat-icon">
+            🌍
+        </div>
+
+
+        <h2>
+            50+
+        </h2>
+
+
+        <p>
+            Countries Covered
+        </p>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="stat-card">
+
+
+        <div class="stat-icon">
+            🤖
+        </div>
+
+
+        <h2>
+            10K+
+        </h2>
+
+
+        <p>
+            AI Trip Plans
+        </p>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="stat-card">
+
+
+        <div class="stat-icon">
+            ⚡
+        </div>
+
+
+        <h2>
+            24/7
+        </h2>
+
+
+        <p>
+            AI Travel Support
+        </p>
+
+
+    </div>
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- ===========================
+     FOOTER
+=========================== -->
+
+
+<footer class="footer" id="contact">
+
+
+
+<div class="newsletter">
+
+
+    <h2>
+        Ready To Plan Your Next Adventure? ✈️
+    </h2>
+
+
+    <p>
+        Subscribe and get smart travel ideas powered by AI.
+    </p>
+
+
+
+    <div class="newsletter-box">
+
+
+        <input 
+        type="email"
+        placeholder="Enter your email">
+
+
+
+        <button>
+            Subscribe 🚀
+        </button>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="footer-container">
+
+
+
+    <div class="footer-box">
+
+
+        <h2>
+            AI Travel Planner ✈️
+        </h2>
+
+
+        <p>
+
+            Your intelligent travel companion
+            that creates personalized journeys
+            using Artificial Intelligence.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="footer-box">
+
+
+        <h3>
+            Quick Links
+        </h3>
+
+
+        <a href="#home">
+            🏠 Home
+        </a>
+
+
+        <a href="#destinations">
+            🌍 Destinations
+        </a>
+
+
+        <a href="#features">
+            🚀 Features
+        </a>
+
+
+        <a href="#testimonials">
+            ⭐ Reviews
+        </a>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="footer-box">
+
+
+        <h3>
+            Explore
+        </h3>
+
+
+        <a href="#">
+            Adventure Trips
+        </a>
+
+
+        <a href="#">
+            Luxury Travel
+        </a>
+
+
+        <a href="#">
+            Budget Travel
+        </a>
+
+
+        <a href="#">
+            Family Trips
+        </a>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="footer-box">
+
+
+        <h3>
+            Follow Us
+        </h3>
+
+
+        <div class="social-links">
+
+
+            <a href="#">
+                🌐
+            </a>
+
+
+            <a href="#">
+                📸
+            </a>
+
+
+            <a href="#">
+                ▶️
+            </a>
+
+
+            <a href="#">
+                💼
+            </a>
+
+
+        </div>
+
+
+
+        <p>
+            📧 support@aitravel.com
+        </p>
+
+
+        <p>
+            🌎 Worldwide
+        </p>
+
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+<div class="footer-bottom">
+
+
+<p>
+© 2026 AI Travel Planner. All Rights Reserved.
+</p>
+
+
+</div>
+
+
+
+
+</footer>
+<!-- LOGIN POPUP -->
+
+<div class="modal" id="loginModal">
+
+
+    <div class="modal-box">
+
+
+        <span class="close" onclick="closeLogin()">
+            ×
+        </span>
+
+
+        <h2>
+            Welcome Back ✈️
+        </h2>
+
+
+        <input 
+        type="email"
+        placeholder="Enter Email">
+
+
+        <input 
+        type="password"
+        placeholder="Enter Password">
+
+
+        <button>
+            Login
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+<!-- SIGNUP POPUP -->
+
+<div class="modal" id="signupModal">
+
+
+    <div class="modal-box">
+
+
+        <span class="close" onclick="closeSignup()">
+            ×
+        </span>
+
+
+
+        <h2>
+            Create Account 🚀
+        </h2>
+
+
+
+        <input
+        type="text"
+        placeholder="Full Name">
+
+
+
+        <input
+        type="email"
+        placeholder="Email">
+
+
+
+        <input
+        type="password"
+        placeholder="Password">
+
+
+
+        <button>
+            Sign Up
+        </button>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<script src="/static/js/script.js"></script>
+
+
+
+
+
+</body>
+
+</html>
