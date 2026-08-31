@@ -3,48 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SafarAI - AI Travel Planner Pakistan & Worldwide</title>
-    <meta name="description" content="Plan your dream trip across Pakistan & international destinations with AI. Integrated with Bookme, Sastaticket, Gerry's, TripKar & FindMyAdventure.">
+    <title>The Mad Hatters AI - Experiential & Cultural Travel Pakistan</title>
+    <meta name="description" content="Premier cultural, adventure, and experiential travel in Pakistan. AI-powered tour planning for women-only trips, foreign travelers, Hunza & Skardu expeditions.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-announcement">
+        <div class="section-container top-bar-flex">
+            <span>🎒 <strong>The Mad Hatters AI Travel:</strong> Women-Only & Foreigner Tour Packages Open for Hunza & Skardu! 🏔️</span>
+            <div class="top-contact">
+                <span>📞 +92 300 1234567</span>
+                <span>📧 info@themadhatters.pk</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">
-                <span class="logo-icon">✈️</span>
-                <span class="logo-text">Safar<span class="highlight">AI</span></span>
-                <span class="country-badge">🇵🇰 PK</span>
+                <span class="logo-hat">🎩</span>
+                <span class="logo-text">Mad <span class="highlight">Hatters</span> AI</span>
+                <span class="pk-tag">🇵🇰 Pakistan</span>
             </a>
 
             <div class="nav-menu" id="navMenu">
                 <ul class="nav-links">
                     <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#experiential" class="nav-link">Experiential Tours</a></li>
                     <li><a href="#ai-planner" class="nav-link">AI Planner</a></li>
-                    <li><a href="#brands" class="nav-link">Top PK Brands</a></li>
+                    <li><a href="#women-tours" class="nav-link">Women-Only</a></li>
                     <li><a href="#destinations" class="nav-link">Destinations</a></li>
-                    <li><a href="#features" class="nav-link">Features</a></li>
-                    <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                    <li><a href="#reviews" class="nav-link">Reviews</a></li>
                 </ul>
                 <div class="nav-buttons-mobile">
-                    <button class="btn btn-outline" onclick="openLogin()">Login</button>
-                    <button class="btn btn-primary" onclick="openSignup()">Sign Up</button>
+                    <button class="btn btn-purple" onclick="openLogin()">Login</button>
+                    <button class="btn btn-yellow" onclick="openSignup()">Book Tour</button>
                 </div>
             </div>
 
             <div class="nav-actions">
-                <button class="btn btn-outline nav-btn-desktop" onclick="openLogin()">Login</button>
-                <button class="btn btn-primary nav-btn-desktop" onclick="openSignup()">Sign Up</button>
+                <button class="btn btn-purple nav-btn-desktop" onclick="openLogin()">Login</button>
+                <button class="btn btn-yellow nav-btn-desktop" onclick="openSignup()">Book Tour</button>
                 
-                <!-- Mobile Hamburger Button -->
+                <!-- Mobile Hamburger Toggle -->
                 <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
                     <span></span>
                     <span></span>
@@ -54,83 +65,89 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (THE MAD HATTERS THEME) -->
     <section class="hero" id="home">
-        <div class="hero-bg-glow"></div>
+        <div class="hero-bg-overlay"></div>
         <div class="hero-container">
             <div class="hero-content">
-                <div class="badge-pill">
-                    <span class="badge-dot"></span>
-                    <span>#1 AI Travel Assistant in Pakistan 🇵🇰</span>
+                <div class="hero-badge">
+                    <span>🌟 Experiential & Cultural Travel in Pakistan</span>
                 </div>
                 
                 <h1 class="hero-title">
-                    Discover Pakistan & The World With <span class="text-gradient">Smart AI</span> ✈️
+                    Explore Pakistan's Wonder With <span class="purple-gradient-text">The Mad Hatters AI</span> 🎩🏔️
                 </h1>
                 
                 <p class="hero-subtitle">
-                    Generate instant day-by-day itineraries, PKR budget estimates, and book with Pakistan's top travel platforms: <strong>Bookme, Sastaticket, Gerry's, TripKar & FindMyAdventure</strong>.
+                    Premier cultural travel, women-only group tours, and foreigner expedition packages across Northern Pakistan—powered by intelligent AI planning.
                 </p>
 
-                <!-- Search Widget Box -->
-                <div class="search-widget-container">
-                    <div class="widget-tabs">
-                        <button class="tab-btn active" onclick="switchTab(this, 'ai-tab')">🤖 AI Itinerary</button>
-                        <button class="tab-btn" onclick="switchTab(this, 'flights-tab')">✈️ Flights</button>
-                        <button class="tab-btn" onclick="switchTab(this, 'hotels-tab')">🏨 Hotels</button>
-                        <button class="tab-btn" onclick="switchTab(this, 'tours-tab')">🏔️ North Tours</button>
+                <!-- TOUR SEARCH WIDGET -->
+                <div class="tour-search-card">
+                    <div class="search-tabs">
+                        <button class="search-tab active" onclick="switchSearchTab(this, 'all')">🎒 All Tours</button>
+                        <button class="search-tab" onclick="switchSearchTab(this, 'women')">👧 Women Only</button>
+                        <button class="search-tab" onclick="switchSearchTab(this, 'foreigners')">🌍 Foreigner Packages</button>
+                        <button class="search-tab" onclick="switchSearchTab(this, 'custom')">🤖 Custom AI Plan</button>
                     </div>
 
-                    <form class="search-form" id="searchForm" onsubmit="handleQuickSearch(event)">
-                        <div class="form-grid">
-                            <div class="input-group">
-                                <label for="destInput">📍 Destination</label>
-                                <input type="text" id="destInput" placeholder="e.g. Hunza Valley, Skardu, Dubai" required>
-                            </div>
-                            <div class="input-group">
-                                <label for="dateFrom">📅 Start Date</label>
-                                <input type="date" id="dateFrom" required>
-                            </div>
-                            <div class="input-group">
-                                <label for="durationSelect">⏳ Duration</label>
-                                <select id="durationSelect">
-                                    <option value="3">3 Days Weekend</option>
-                                    <option value="5" selected>5 Days Tour</option>
-                                    <option value="7">7 Days Expedition</option>
-                                    <option value="10">10+ Days Vacation</option>
+                    <form class="search-form" onsubmit="handleHeroSearch(event)">
+                        <div class="form-row">
+                            <div class="input-box">
+                                <label>📍 Destination</label>
+                                <select id="heroDestSelect">
+                                    <option value="Hunza Valley & Autumn Colors">Hunza & Nagar Valley</option>
+                                    <option value="Skardu & Deosai Plains">Skardu & Deosai National Park</option>
+                                    <option value="Fairy Meadows & Nanga Parbat">Fairy Meadows & Nanga Parbat</option>
+                                    <option value="Kalash Valley & Chilam Joshi Festival">Kalash Valley & Chitral</option>
+                                    <option value="Swat Valley & Malam Jabba">Swat Valley & Malam Jabba</option>
                                 </select>
                             </div>
-                            <div class="input-group">
-                                <label for="budgetSelect">💰 Budget (PKR)</label>
-                                <select id="budgetSelect">
-                                    <option value="budget">Economy (PKR 35k-75k)</option>
-                                    <option value="moderate" selected>Standard (PKR 80k-180k)</option>
-                                    <option value="luxury">Luxury (PKR 200k+)</option>
+                            
+                            <div class="input-box">
+                                <label>📅 Month / Season</label>
+                                <select id="heroSeasonSelect">
+                                    <option value="Autumn Blossom (Oct-Nov)">Autumn Blossom (Oct-Nov)</option>
+                                    <option value="Summer Expeditions (May-Sep)">Summer Expeditions (May-Sep)</option>
+                                    <option value="Cherry Blossom (Mar-Apr)">Cherry Blossom (Mar-Apr)</option>
+                                    <option value="Winter Ski & Snow (Dec-Feb)">Winter Ski & Snow (Dec-Feb)</option>
                                 </select>
                             </div>
+
+                            <div class="input-box">
+                                <label>👥 Group Type</label>
+                                <select id="heroGroupSelect">
+                                    <option value="Women Only Group">Women-Only Travelers</option>
+                                    <option value="Foreign Tourist Group">International Foreigners</option>
+                                    <option value="Family & Couple">Family / Couple Group</option>
+                                    <option value="Solo Adventurer">Solo Adventurer</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-search">
+                                🔍 Find AI Tour
+                            </button>
                         </div>
-                        <button type="submit" class="btn btn-gradient search-btn">
-                            <span>Generate AI Trip Plan 🚀</span>
-                        </button>
                     </form>
                 </div>
             </div>
 
+            <!-- HERO PHOTO GRID -->
             <div class="hero-visual">
-                <div class="hero-image-wrapper">
-                    <img src="static/images/travel-ai.jpg" alt="AI Travel Pakistan" class="hero-img">
-                    <div class="glass-card float-card-1">
-                        <div class="icon-circle">🏔️</div>
+                <div class="hero-img-stack">
+                    <img src="static/images/travel-ai.jpg" alt="Hunza Valley Tourism" class="main-hero-img">
+                    <div class="badge-float badge-float-1">
+                        <span class="float-icon">🏔️</span>
                         <div>
-                            <h4>Hunza Valley Tour</h4>
-                            <p>5 Days • PKR 65,000</p>
+                            <h4>Hunza & Skardu</h4>
+                            <p>Experiential Expeditions</p>
                         </div>
                     </div>
-                    <div class="glass-card float-card-2">
-                        <div class="icon-circle green">⭐</div>
+                    <div class="badge-float badge-float-2">
+                        <span class="float-icon gold">⭐</span>
                         <div>
-                            <h4>Top Rated Partners</h4>
-                            <p>Integrated PK Booking</p>
+                            <h4>4.9 / 5.0 Rating</h4>
+                            <p>1,000+ Happy Adventurers</p>
                         </div>
                     </div>
                 </div>
@@ -138,485 +155,367 @@
         </div>
     </section>
 
-    <!-- TOP 5 PAKISTAN TRAVEL BRANDS INTEGRATION -->
-    <section class="brands-section" id="brands">
+    <!-- EXPERIENTIAL TRAVEL CATEGORIES -->
+    <section class="experiential-section" id="experiential">
         <div class="section-container">
-            <div class="section-header">
-                <span class="section-tag">PAKISTAN TRAVEL ECOSYSTEM</span>
-                <h2>Powered By Top 5 Pakistani Travel Brands 🇵🇰</h2>
-                <p>We combine AI itinerary planning with direct booking links from Pakistan's most trusted travel services.</p>
+            <div class="section-title-box">
+                <span class="sub-title">EXPERIENTIAL & CULTURAL TRAVEL</span>
+                <h2>Why Travel With The Mad Hatters? 🎩</h2>
+                <p>We specialize in curated, sustainable, and culturally immersive tours across Pakistan.</p>
             </div>
 
-            <div class="brands-grid">
-                <!-- Brand 1: Bookme.pk -->
-                <div class="brand-card">
-                    <div class="brand-badge green">Super App</div>
-                    <div class="brand-icon">🚌</div>
-                    <h3>Bookme.pk</h3>
-                    <p class="brand-type">E-Ticketing & Transportation</p>
-                    <p class="brand-desc">Book intercity bus tickets, domestic flights, hotels, and event passes instantly across Pakistan.</p>
-                    <ul class="brand-features">
-                        <li>✓ Daewoo, Faisal Movers & Bus Ticketing</li>
-                        <li>✓ PIA, AirSial & FlyJinnah Flights</li>
-                        <li>✓ Instant PKR Mobile Payments</li>
-                    </ul>
-                    <a href="https://bookme.pk" target="_blank" rel="noopener" class="brand-link">Explore Bookme →</a>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">👩‍🌾</div>
+                    <h3>Women-Only Trips</h3>
+                    <p>Safe, empowering, and community-driven tours designed exclusively for women exploring Pakistan's north.</p>
+                    <a href="#women-tours" class="cat-link">View Women Tours →</a>
                 </div>
 
-                <!-- Brand 2: Sastaticket.pk -->
-                <div class="brand-card">
-                    <div class="brand-badge cyan">Flights Leader</div>
-                    <div class="brand-icon">✈️</div>
-                    <h3>Sastaticket.pk</h3>
-                    <p class="brand-type">Online Travel Agency (OTA)</p>
-                    <p class="brand-desc">Compare low-cost flight tickets and top hotel rates for domestic and international travel.</p>
-                    <ul class="brand-features">
-                        <li>✓ Cheap Flights Guarantee</li>
-                        <li>✓ Domestic & Umrah Packages</li>
-                        <li>✓ JazzCash & EasyPaisa Support</li>
-                    </ul>
-                    <a href="https://www.sastaticket.pk" target="_blank" rel="noopener" class="brand-link">Explore Sastaticket →</a>
+                <div class="category-card">
+                    <div class="category-icon">🌍</div>
+                    <h3>Foreigner Tour Packages</h3>
+                    <p>Full visa assistance, NOC clearances, multilingual guides, and end-to-end luxury hospitality for international guests.</p>
+                    <a href="#ai-planner" class="cat-link">Explore Foreigner Packages →</a>
                 </div>
 
-                <!-- Brand 3: Gerry's Travel -->
-                <div class="brand-card">
-                    <div class="brand-badge gold">Visa & Corporate</div>
-                    <div class="brand-icon">🛂</div>
-                    <h3>Gerry's Travel</h3>
-                    <p class="brand-type">Visa Facilitation & Tourism</p>
-                    <p class="brand-desc">Pakistan's premier travel house with 60+ years experience in visa processing, group tours & flights.</p>
-                    <ul class="brand-features">
-                        <li>✓ Official Visa Application Centers</li>
-                        <li>✓ Worldwide Custom Packages</li>
-                        <li>✓ Corporate Travel Management</li>
-                    </ul>
-                    <a href="https://gerrystravel.com" target="_blank" rel="noopener" class="brand-link">Explore Gerry's →</a>
+                <div class="category-card">
+                    <div class="category-icon">🎨</div>
+                    <h3>Cultural & Heritage Tours</h3>
+                    <p>Immerse in ancient Kalash traditions, Lahore Mughal architecture, Peshawar street food, and Balti heritage forts.</p>
+                    <a href="#destinations" class="cat-link">Discover Heritage →</a>
                 </div>
 
-                <!-- Brand 4: TripKar -->
-                <div class="brand-card">
-                    <div class="brand-badge purple">Local Tourism</div>
-                    <div class="brand-icon">🏔️</div>
-                    <h3>TripKar</h3>
-                    <p class="brand-type">Domestic Tour Operator</p>
-                    <p class="brand-desc">Specialized in Northern Pakistan expeditions—Hunza, Skardu, Fairy Meadows, Naran, and Malam Jabba.</p>
-                    <ul class="brand-features">
-                        <li>✓ Verified Northern Hotels & Resorts</li>
-                        <li>✓ Local Jeep & Trekking Guides</li>
-                        <li>✓ Custom Family Tour Packages</li>
-                    </ul>
-                    <a href="https://tripkar.com" target="_blank" rel="noopener" class="brand-link">Explore TripKar →</a>
-                </div>
-
-                <!-- Brand 5: FindMyAdventure / TravelStudio -->
-                <div class="brand-card">
-                    <div class="brand-badge emerald">Adventure</div>
-                    <div class="brand-icon">🏕️</div>
-                    <h3>FindMyAdventure</h3>
-                    <p class="brand-type">Expeditions & Community Tours</p>
-                    <p class="brand-desc">Premier platform for curated adventure trips, camping in Gilgit-Baltistan, and group activities.</p>
-                    <ul class="brand-features">
-                        <li>✓ K2 Basecamp & Deosai Treks</li>
-                        <li>✓ Camping & River Rafting</li>
-                        <li>✓ Certified Local Team Leaders</li>
-                    </ul>
-                    <a href="https://findmyadventure.pk" target="_blank" rel="noopener" class="brand-link">Explore Adventure →</a>
+                <div class="category-card">
+                    <div class="category-icon">🧗‍♀️</div>
+                    <h3>High-Altitude Treks</h3>
+                    <p>Conquer Fairy Meadows, Deosai Plains, K2 Basecamp, and Passu Glacier with certified local mountain guides.</p>
+                    <a href="#ai-planner" class="cat-link">Trek Pakistan →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- AI PLANNER INTERACTIVE TOOL -->
+    <!-- INTERACTIVE AI PLANNER (THE MAD HATTERS ENGINE) -->
     <section class="ai-planner-section" id="ai-planner">
         <div class="section-container">
-            <div class="planner-box-wrapper">
-                <div class="planner-header">
-                    <span class="badge-pill">INTERACTIVE AI ENGINE</span>
-                    <h2>Generate Your Custom Travel Plan</h2>
-                    <p>Select your preferences below to craft a complete itinerary with PKR cost estimates.</p>
+            <div class="planner-wrapper">
+                <div class="planner-heading">
+                    <span class="pill-tag">AI TOUR ITINERARY BUILDER</span>
+                    <h2>Build Your Customized Pakistan Tour</h2>
+                    <p>Configure your ideal trip and get an instant day-by-day itinerary with exact PKR rates and guide recommendations.</p>
                 </div>
 
-                <div class="planner-form-grid">
-                    <div class="form-group">
-                        <label for="aiDest">Select Destination</label>
-                        <select id="aiDest">
-                            <option value="Hunza & Nagar Valley">🏔️ Hunza & Nagar Valley (Gilgit-Baltistan)</option>
-                            <option value="Skardu & Deosai Plains">🌌 Skardu & Deosai Plains</option>
-                            <option value="Swat Valley & Malam Jabba">🌲 Swat Valley & Malam Jabba Ski Resort</option>
-                            <option value="Lahore Cultural Heritage">🕌 Lahore Cultural & Food Tour</option>
-                            <option value="Islamabad & Margalla Hills">🏛️ Islamabad & Margalla Hills</option>
-                            <option value="Dubai Luxury Experience">🏙️ Dubai & Desert Safari (UAE)</option>
-                            <option value="Istanbul & Cappadocia">🕌 Istanbul & Cappadocia (Turkey)</option>
+                <div class="planner-controls">
+                    <div class="control-field">
+                        <label for="hatterDest">Destination Region</label>
+                        <select id="hatterDest">
+                            <option value="Hunza & Nagar Valley">🏔️ Hunza & Nagar Valley (Autumn/Blossom)</option>
+                            <option value="Skardu & Deosai Plains">🌌 Skardu, Katpana Desert & Deosai</option>
+                            <option value="Fairy Meadows & Nanga Parbat">🏕️ Fairy Meadows & Reflection Lake</option>
+                            <option value="Kalash Valley & Chitral">🕌 Kalash Valley Culture & Festivals</option>
+                            <option value="Swat Valley & Kalam">🌲 Swat, Kalam & Ushu Forest</option>
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="aiDays">Trip Duration</label>
-                        <select id="aiDays">
-                            <option value="3">3 Days (Short Escape)</option>
-                            <option value="5" selected>5 Days (Standard Trip)</option>
-                            <option value="7">7 Days (Full Exploration)</option>
+                    <div class="control-field">
+                        <label for="hatterDays">Tour Duration</label>
+                        <select id="hatterDays">
+                            <option value="4">4 Days Quick Escape</option>
+                            <option value="6" selected>6 Days Explorer Tour</option>
+                            <option value="8">8 Days Complete Expedition</option>
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="aiStyle">Travel Style</label>
-                        <select id="aiStyle">
-                            <option value="Adventure & Trekking">🧗 Adventure & Trekking</option>
-                            <option value="Family Friendly">👨‍👩‍👧‍👦 Family Friendly & Relaxed</option>
-                            <option value="Cultural & Foodie">🥘 Heritage & Culinary Tour</option>
-                            <option value="Honeymoon / Couple">💑 Honeymoon & Luxury</option>
+                    <div class="control-field">
+                        <label for="hatterType">Travel Style</label>
+                        <select id="hatterType">
+                            <option value="Women Only Group">👩 Women-Only Community Group</option>
+                            <option value="Foreigner Visa & Luxury">🌍 Foreigner Experiential Tour</option>
+                            <option value="Cultural Heritage & Food">🥘 Cultural & Local Community Tour</option>
+                            <option value="Adventure Trekking">🧗 Mountain Trek & Camping</option>
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="aiTier">Budget Preference</label>
-                        <select id="aiTier">
-                            <option value="Budget Backpacker">🪙 Economy (Public Transport / Guest Houses)</option>
-                            <option value="Standard Comfort" selected>🏨 Standard (3-Star Hotels / Dedicated Coaster)</option>
-                            <option value="VIP Premium">👑 VIP Luxury (4/5-Star Resorts / Private Prado)</option>
+                    <div class="control-field">
+                        <label for="hatterTier">Budget & Accommodation</label>
+                        <select id="hatterTier">
+                            <option value="Standard Comfort">🏨 Standard Resorts & Shared Prado (PKR 65k-95k)</option>
+                            <option value="Luxury Heritage" selected>👑 Heritage Forts (Serena/Khaplu) & Private Prado (PKR 140k+)</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="planner-actions">
-                    <button class="btn btn-gradient btn-large" onclick="generateAIItinerary()">
-                        ⚡ Generate AI Itinerary & Quotes
+                <div class="planner-btn-wrap">
+                    <button class="btn btn-purple btn-large" onclick="generateHatterItinerary()">
+                        🎩 Generate Mad Hatters AI Tour Itinerary
                     </button>
                 </div>
 
-                <!-- AI Output Results Container -->
-                <div class="ai-result-display" id="aiResultDisplay">
-                    <div class="result-placeholder">
-                        <div class="placeholder-icon">🤖</div>
-                        <h3>Your Custom AI Itinerary Will Appear Here</h3>
-                        <p>Select your destination above and click 'Generate AI Itinerary' to see a detailed day-by-day plan with cost breakdowns and booking recommendations.</p>
+                <!-- AI Output Results -->
+                <div class="ai-output-box" id="hatterOutput">
+                    <div class="output-empty">
+                        <div class="empty-hat">🎩</div>
+                        <h3>Select your tour options above</h3>
+                        <p>Click 'Generate Mad Hatters AI Tour Itinerary' to display a personalized day-by-day plan with authentic recommendations.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- POPULAR DESTINATIONS -->
+    <!-- FEATURED WOMEN-ONLY & EXPERIENTIAL TOURS -->
+    <section class="tours-section" id="women-tours">
+        <div class="section-container">
+            <div class="section-title-box">
+                <span class="sub-title">SPECIAL FEATURED PACKAGES</span>
+                <h2>Upcoming Experiential Tours 🏔️</h2>
+                <p>Join our small group tours or customize a private departure for your group.</p>
+            </div>
+
+            <div class="tours-grid">
+                <!-- Tour 1: Hunza Autumn -->
+                <div class="tour-card">
+                    <div class="tour-img-box">
+                        <img src="static/images/travel-ai.jpg" alt="Hunza Autumn Tour" class="tour-img">
+                        <span class="tour-badge purple">Women Only</span>
+                    </div>
+                    <div class="tour-details">
+                        <div class="tour-meta-row">
+                            <span class="tour-days">⏳ 6 Days / 5 Nights</span>
+                            <span class="tour-diff">🌿 Easy to Moderate</span>
+                        </div>
+                        <h3>Hunza Valley Autumn Colors & Altit Heritage</h3>
+                        <p>Experience Golden Poplar trees, Attabad Lake boat ride, Baltit Fort heritage dinner, and Passu Cones walk.</p>
+                        <div class="tour-price-row">
+                            <div>
+                                <span class="price-label">Price per person</span>
+                                <div class="price-val">PKR 78,000</div>
+                            </div>
+                            <button class="btn btn-yellow" onclick="openSignup()">Book Slot</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 2: Skardu & Deosai -->
+                <div class="tour-card">
+                    <div class="tour-img-box">
+                        <img src="static/images/about-ai.jpg" alt="Skardu Tour" class="tour-img">
+                        <span class="tour-badge yellow">Foreigner Favorite</span>
+                    </div>
+                    <div class="tour-details">
+                        <div class="tour-meta-row">
+                            <span class="tour-days">⏳ 7 Days / 6 Nights</span>
+                            <span class="tour-diff">⛰️ Moderate Adventure</span>
+                        </div>
+                        <h3>Skardu, Cold Desert & Deosai Plains Expedition</h3>
+                        <p>Explore Shangrila Resort, Katpana Sand Dunes, Sheosar Lake in Deosai Plains, and historic Shigar Fort stay.</p>
+                        <div class="tour-price-row">
+                            <div>
+                                <span class="price-label">Price per person</span>
+                                <div class="price-val">PKR 95,000</div>
+                            </div>
+                            <button class="btn btn-yellow" onclick="openSignup()">Book Slot</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 3: Kalash Cultural Festival -->
+                <div class="tour-card">
+                    <div class="tour-img-box">
+                        <img src="static/images/turkey.jpg" alt="Kalash Tour" class="tour-img">
+                        <span class="tour-badge purple">Cultural Heritage</span>
+                    </div>
+                    <div class="tour-details">
+                        <div class="tour-meta-row">
+                            <span class="tour-days">⏳ 5 Days / 4 Nights</span>
+                            <span class="tour-diff">🌿 Easy Cultural</span>
+                        </div>
+                        <h3>Kalash Valley Cultural & Festival Discovery</h3>
+                        <p>Immerse in indigenous Kalasha music, dance, traditional handwoven dresses, and ancient animist rituals.</p>
+                        <div class="tour-price-row">
+                            <div>
+                                <span class="price-label">Price per person</span>
+                                <div class="price-val">PKR 62,000</div>
+                            </div>
+                            <button class="btn btn-yellow" onclick="openSignup()">Book Slot</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESTINATIONS SECTION -->
     <section class="destinations-section" id="destinations">
         <div class="section-container">
-            <div class="section-header">
-                <span class="section-tag">EXPLORE TOP SPOTS</span>
+            <div class="section-title-box">
+                <span class="sub-title">PAKISTAN & BEYOND</span>
                 <h2>Popular Destinations 🌍</h2>
-                <p>Top trending destinations for Pakistani travelers this season.</p>
+                <p>Discover northern valleys, cultural cities, and world heritage sites.</p>
             </div>
 
-            <div class="destinations-grid">
-                <!-- Hunza Card -->
-                <div class="dest-card">
-                    <div class="dest-image-wrapper">
-                        <img src="static/images/travel-ai.jpg" alt="Hunza Valley" class="dest-img">
-                        <span class="dest-badge">Gilgit-Baltistan</span>
-                    </div>
-                    <div class="dest-content">
-                        <h3>Hunza & Nagar Valley</h3>
-                        <p>Attabad Lake, Baltit Fort, Passu Cones & Eagle's Nest vantage points.</p>
-                        <div class="dest-meta">
-                            <span class="dest-price">From PKR 55,000</span>
-                            <span class="dest-rating">⭐ 4.9 (1.2k reviews)</span>
-                        </div>
+            <div class="dest-grid">
+                <div class="dest-item">
+                    <img src="static/images/travel-ai.jpg" alt="Hunza">
+                    <div class="dest-overlay">
+                        <h3>Hunza Valley</h3>
+                        <p>Gilgit-Baltistan • 55,000 PKR</p>
                     </div>
                 </div>
 
-                <!-- Skardu Card -->
-                <div class="dest-card">
-                    <div class="dest-image-wrapper">
-                        <img src="static/images/about-ai.jpg" alt="Skardu" class="dest-img">
-                        <span class="dest-badge">Gilgit-Baltistan</span>
-                    </div>
-                    <div class="dest-content">
+                <div class="dest-item">
+                    <img src="static/images/about-ai.jpg" alt="Skardu">
+                    <div class="dest-overlay">
                         <h3>Skardu & Shangrila</h3>
-                        <p>Shangrila Lake, Cold Desert, Katpana Dunes & Deosai National Park.</p>
-                        <div class="dest-meta">
-                            <span class="dest-price">From PKR 68,000</span>
-                            <span class="dest-rating">⭐ 4.9 (890 reviews)</span>
-                        </div>
+                        <p>Gilgit-Baltistan • 68,000 PKR</p>
                     </div>
                 </div>
 
-                <!-- Paris Card -->
-                <div class="dest-card">
-                    <div class="dest-image-wrapper">
-                        <img src="static/images/paris.jpg" alt="Paris" class="dest-img">
-                        <span class="dest-badge">Europe</span>
-                    </div>
-                    <div class="dest-content">
-                        <h3>Paris, France</h3>
-                        <p>Eiffel Tower, Louvre Museum, Seine River Cruises & French Cuisine.</p>
-                        <div class="dest-meta">
-                            <span class="dest-price">From PKR 320,000</span>
-                            <span class="dest-rating">⭐ 4.8 (2.4k reviews)</span>
-                        </div>
+                <div class="dest-item">
+                    <img src="static/images/paris.jpg" alt="Paris">
+                    <div class="dest-overlay">
+                        <h3>Paris & Europe</h3>
+                        <p>Cultural Tour • 320,000 PKR</p>
                     </div>
                 </div>
 
-                <!-- Dubai Card -->
-                <div class="dest-card">
-                    <div class="dest-image-wrapper">
-                        <img src="static/images/dubai.jpg" alt="Dubai" class="dest-img">
-                        <span class="dest-badge">Middle East</span>
+                <div class="dest-item">
+                    <img src="static/images/dubai.jpg" alt="Dubai">
+                    <div class="dest-overlay">
+                        <h3>Dubai & Desert Safari</h3>
+                        <p>UAE Package • 185,000 PKR</p>
                     </div>
-                    <div class="dest-content">
-                        <h3>Dubai, UAE</h3>
-                        <p>Burj Khalifa, Desert Safari, Museum of the Future & Luxury Malls.</p>
-                        <div class="dest-meta">
-                            <span class="dest-price">From PKR 185,000</span>
-                            <span class="dest-rating">⭐ 4.9 (3.1k reviews)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Japan Card -->
-                <div class="dest-card">
-                    <div class="dest-image-wrapper">
-                        <img src="static/images/japan.jpg" alt="Japan" class="dest-img">
-                        <span class="dest-badge">East Asia</span>
-                    </div>
-                    <div class="dest-content">
-                        <h3>Tokyo & Kyoto, Japan</h3>
-                        <p>Cherry Blossoms, Mount Fuji, Bullet Trains & Historic Shrines.</p>
-                        <div class="dest-meta">
-                            <span class="dest-price">From PKR 420,000</span>
-                            <span class="dest-rating">⭐ 4.9 (1.5k reviews)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Turkey Card -->
-                <div class="dest-card">
-                    <div class="dest-image-wrapper">
-                        <img src="static/images/turkey.jpg" alt="Turkey" class="dest-img">
-                        <span class="dest-badge">Eurasia</span>
-                    </div>
-                    <div class="dest-content">
-                        <h3>Istanbul & Cappadocia</h3>
-                        <p>Hagia Sophia, Hot Air Balloons, Bosphorus Cruise & Grand Bazaar.</p>
-                        <div class="dest-meta">
-                            <span class="dest-price">From PKR 210,000</span>
-                            <span class="dest-rating">⭐ 4.9 (2.8k reviews)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FEATURES SECTION -->
-    <section class="features-section" id="features">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-tag">WHY SAFAR AI</span>
-                <h2>Built For Pakistani Travelers 🚀</h2>
-                <p>Advanced AI technology paired with local Pakistani booking options.</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-num">01</div>
-                    <div class="feature-icon-box">🤖</div>
-                    <h3>AI Smart Itineraries</h3>
-                    <p>Tailor-made schedules generated instantly based on your budget, travel dates, and interests.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-num">02</div>
-                    <div class="feature-icon-box">🇵🇰</div>
-                    <h3>PKR Budget Calculators</h3>
-                    <p>Real-time pricing in PKR for transport, local food, hotel stays, and entry permits.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-num">03</div>
-                    <div class="feature-icon-box">🔗</div>
-                    <h3>Integrated PK Partners</h3>
-                    <p>Direct integration with Bookme, Sastaticket, Gerry's, TripKar & FindMyAdventure.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-num">04</div>
-                    <div class="feature-icon-box">🌦️</div>
-                    <h3>Live Weather & Terrain</h3>
-                    <p>Smart alerts on Karakoram Highway road status, snowfall updates, and weather forecasts.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="testimonials-section" id="testimonials">
+    <section class="reviews-section" id="reviews">
         <div class="section-container">
-            <div class="section-header">
-                <span class="section-tag">COMMUNITY REVIEWS</span>
+            <div class="section-title-box">
+                <span class="sub-title">COMMUNITY REVIEWS</span>
                 <h2>What Travelers Say ⭐</h2>
-                <p>Over 100,000+ itineraries generated for trips across Pakistan and abroad.</p>
+                <p>Read authentic reviews from women travelers and international tourists.</p>
             </div>
 
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="user-info">
-                        <img src="static/images/user1.jpg" alt="Sarah J." class="user-avatar">
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="reviewer-header">
+                        <img src="static/images/user1.jpg" alt="User 1" class="reviewer-img">
                         <div>
-                            <h4>Sarah Johnson</h4>
-                            <p>Travel Vlogger • Islamabad</p>
+                            <h4>Ayesha Siddiqui</h4>
+                            <p>Women-Only Hunza Tour</p>
                         </div>
                     </div>
-                    <div class="stars-row">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">"SafarAI organized my entire 7-day road trip to Skardu with exact PKR budgets. Booking buses via Bookme directly from the itinerary was seamless!"</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-comment">"As a solo woman traveler, joining The Mad Hatters trip to Hunza was the best decision ever! Safe, empowering, and exceptionally well organized."</p>
                 </div>
 
-                <div class="testimonial-card">
-                    <div class="user-info">
-                        <img src="static/images/user2.jpg" alt="Ali K." class="user-avatar">
+                <div class="review-card">
+                    <div class="reviewer-header">
+                        <img src="static/images/user2.jpg" alt="User 2" class="reviewer-img">
                         <div>
-                            <h4>Ali Khan</h4>
-                            <p>Tech Entrepreneur • Lahore</p>
+                            <h4>Markus Weber</h4>
+                            <p>Foreigner Expedition • Germany</p>
                         </div>
                     </div>
-                    <div class="stars-row">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">"The best AI travel tool for Pakistanis. Showed cheap flight options on Sastaticket and gave an accurate daily breakdown for Dubai."</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-comment">"The Mad Hatters handled our Pakistan visa recommendation letters, internal transport, and mountain trekking guides seamlessly. High recommended!"</p>
                 </div>
 
-                <div class="testimonial-card">
-                    <div class="user-info">
-                        <img src="static/images/user3.jpg" alt="Zainab M." class="user-avatar">
+                <div class="review-card">
+                    <div class="reviewer-header">
+                        <img src="static/images/user3.jpg" alt="User 3" class="reviewer-img">
                         <div>
-                            <h4>Zainab Malik</h4>
-                            <p>Adventure Traveler • Karachi</p>
+                            <h4>Sana & Bilal</h4>
+                            <p>Skardu Honeymoon Tour</p>
                         </div>
                     </div>
-                    <div class="stars-row">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">"We booked our Hunza Valley hotel and guide through the TripKar integration. The AI suggested spots we wouldn't have discovered otherwise!"</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- STATS BANNER -->
-    <section class="stats-banner">
-        <div class="section-container">
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <div class="stat-number">100,000+</div>
-                    <p class="stat-label">Travelers Assisted</p>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">5 Top Brands</div>
-                    <p class="stat-label">Pakistani Booking Partners</p>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">PKR 50M+</div>
-                    <p class="stat-label">Travel Savings Estimated</p>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">4.9 / 5.0</div>
-                    <p class="stat-label">User Rating Average</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-comment">"The AI tour builder customized our Skardu honeymoon trip perfectly within our PKR budget. Serena Shigar stay was unforgettable."</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer" id="contact">
+    <!-- WHATSAPP FLOATING QUICK CHAT BUTTON -->
+    <a href="https://wa.me/923001234567?text=Hi%20The%20Mad%20Hatters%20AI!%20I%20want%20to%20book%20a%20tour" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <span class="wa-icon">💬</span>
+        <span class="wa-text">Chat on WhatsApp</span>
+    </a>
+
+    <!-- FOOTER (THE MAD HATTERS BRANDING) -->
+    <footer class="footer">
         <div class="section-container">
-            <div class="footer-top">
-                <div class="footer-brand">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
                     <a href="#home" class="logo">
-                        <span class="logo-icon">✈️</span>
-                        <span class="logo-text">Safar<span class="highlight">AI</span></span>
-                        <span class="country-badge">🇵🇰 PK</span>
+                        <span class="logo-hat">🎩</span>
+                        <span class="logo-text">Mad <span class="highlight">Hatters</span> AI</span>
                     </a>
-                    <p>Pakistan's premiere AI travel platform. Plan trips across Pakistan & worldwide with integrated booking from Bookme, Sastaticket, Gerry's, TripKar & FindMyAdventure.</p>
+                    <p>Premier cultural, adventure, and experiential travel in Pakistan. Specializing in women-only group tours, foreigner tour packages, and custom northern expeditions.</p>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Top PK Brands</h4>
+                    <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="https://bookme.pk" target="_blank" rel="noopener">Bookme.pk</a></li>
-                        <li><a href="https://www.sastaticket.pk" target="_blank" rel="noopener">Sastaticket.pk</a></li>
-                        <li><a href="https://gerrystravel.com" target="_blank" rel="noopener">Gerry's Travel</a></li>
-                        <li><a href="https://tripkar.com" target="_blank" rel="noopener">TripKar</a></li>
-                        <li><a href="https://findmyadventure.pk" target="_blank" rel="noopener">FindMyAdventure</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#experiential">Experiential Tours</a></li>
+                        <li><a href="#ai-planner">AI Tour Planner</a></li>
+                        <li><a href="#women-tours">Women-Only Trips</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Top Destinations</h4>
+                    <h4>Top Regions</h4>
                     <ul>
-                        <li><a href="#destinations">Hunza & Nagar</a></li>
+                        <li><a href="#destinations">Hunza & Nagar Valley</a></li>
                         <li><a href="#destinations">Skardu & Deosai</a></li>
-                        <li><a href="#destinations">Swat & Kalam</a></li>
-                        <li><a href="#destinations">Dubai & Istanbul</a></li>
-                        <li><a href="#destinations">Paris & Europe</a></li>
+                        <li><a href="#destinations">Kalash Valley & Chitral</a></li>
+                        <li><a href="#destinations">Fairy Meadows & Nanga Parbat</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Newsletter</h4>
-                    <p>Get weekly travel updates and northern Pakistan weather alerts.</p>
-                    <form class="newsletter-form" onsubmit="handleSubscribe(event)">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit" class="btn btn-primary">Join</button>
-                    </form>
+                    <h4>Contact Us</h4>
+                    <p>📍 Lahore, Pakistan</p>
+                    <p>📞 +92 300 1234567</p>
+                    <p>📧 info@themadhatters.pk</p>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>© 2026 SafarAI Pakistan. All Rights Reserved. Built with AI for Pakistani Travelers.</p>
-                <div class="footer-socials">
-                    <a href="#" aria-label="Facebook">🌐</a>
-                    <a href="#" aria-label="Instagram">📸</a>
-                    <a href="#" aria-label="YouTube">▶️</a>
-                    <a href="#" aria-label="LinkedIn">💼</a>
-                </div>
+                <p>© 2026 The Mad Hatters Pakistan AI. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- MODAL: LOGIN -->
+    <!-- MODALS -->
     <div class="modal" id="loginModal">
-        <div class="modal-content glass-card">
-            <span class="close-btn" onclick="closeLogin()">&times;</span>
-            <h2>Welcome Back to Safar<span class="highlight">AI</span> ✈️</h2>
-            <p>Login to save your itineraries and manage bookings.</p>
-            <form onsubmit="handleAuth(event, 'Login Successful!')">
-                <div class="input-group">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="name@example.com" required>
-                </div>
-                <div class="input-group">
-                    <label>Password</label>
-                    <input type="password" placeholder="••••••••" required>
-                </div>
-                <button type="submit" class="btn btn-gradient btn-full">Login to Account</button>
+        <div class="modal-box">
+            <span class="close-x" onclick="closeLogin()">&times;</span>
+            <h2>Welcome Back 🎩</h2>
+            <p>Login to your Mad Hatters account.</p>
+            <form onsubmit="handleAuth(event, 'Logged in successfully!')">
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn btn-purple btn-full">Login</button>
             </form>
         </div>
     </div>
 
-    <!-- MODAL: SIGNUP -->
     <div class="modal" id="signupModal">
-        <div class="modal-content glass-card">
-            <span class="close-btn" onclick="closeSignup()">&times;</span>
-            <h2>Create Your Account 🚀</h2>
-            <p>Join 100,000+ Pakistani travelers using AI.</p>
-            <form onsubmit="handleAuth(event, 'Account Created Successfully!')">
-                <div class="input-group">
-                    <label>Full Name</label>
-                    <input type="text" placeholder="Ali Khan" required>
-                </div>
-                <div class="input-group">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="name@example.com" required>
-                </div>
-                <div class="input-group">
-                    <label>Password</label>
-                    <input type="password" placeholder="••••••••" required>
-                </div>
-                <button type="submit" class="btn btn-gradient btn-full">Create SafarAI Account</button>
+        <div class="modal-box">
+            <span class="close-x" onclick="closeSignup()">&times;</span>
+            <h2>Book Your Tour 🎒</h2>
+            <p>Join an upcoming group tour or request private customized dates.</p>
+            <form onsubmit="handleAuth(event, 'Booking inquiry received! Our team will contact you on WhatsApp.')">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="WhatsApp Number (+92...)" required>
+                <button type="submit" class="btn btn-purple btn-full">Submit Booking Request</button>
             </form>
         </div>
     </div>
