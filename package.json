@@ -1,7 +1,0 @@
-{
-  "name": "ai-travel-planner",
-  "version": "1.0.0",
-  "scripts": {
-    "build": "echo 'No build step required'"
-  }
-}
